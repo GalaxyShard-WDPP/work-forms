@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>the Fronion - International News that Doesn’t Stink</title>
+	<link rel="stylesheet" href="css/normalize.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	
+	<script>
+		function clearExample(field) {
+			if (field.value == field.placeholder) field.value = "";
+		}
+		function resetExample(field) {
+			if (field.value == "") field.value = field.placeholder;
+		}
+		// reimplements the placeholder attribute using javascript
+		function clearNameExample() {
+			let field = document.getElementById("nameField");
+			clearExample(field);
+		}
+		function clearPhoneExample() {
+			let field = document.getElementById("phoneField");
+			clearExample(field);
+		}
+		function clearEmailExample() {
+			let field = document.getElementById("emailField");
+			clearExample(field);
+		}
+		function resetNameField() {
+			let field = document.getElementById("nameField");
+			resetExample(field);
+		}
+		function resetPhoneField() {
+			let field = document.getElementById("phoneField");
+			resetExample(field);
+		}
+		function resetEmailField() {
+			let field = document.getElementById("emailField");
+			resetExample(field);
+		}
+		function handleSubmit() {
+			let name = document.getElementById("nameField");
+			let phone = document.getElementById("phoneField");
+			if (name.value != name.placeholder) alert(`Thank you for signing up, ${name.value}!`);
+		}
+	</script>
+</head>
+<body>
+<header>
+	<div class="contentWrapper">
+		<div id="fronionLogo">
+			<img src="img/fronion-logo.png" width="250" alt="the Fronion: News That Doesn’t Stink"/>
+		</div>
+	</div>
+</header>
+<main role="main">
+	<div class="contentWrapper">
+		<form action="" method="" name="signUpForm" id="signUpForm" onsubmit="handleSubmit();">
+			<fieldset id="signUp">
+				<legend>Sign Up For Text Alerts</legend>
+
+					<label for="nameField">Name:</label>
+					<input
+						id="nameField"
+						name="nameField"
+						type="text"
+						class="textfield"
+						value="First and Last Name"
+						placeholder="First and Last Name"
+						onblur="resetNameField();"
+						onfocus="clearNameExample();"
+					/>
+
+					<label for="phoneField">Phone:</label>
+					<input
+						id="phoneField"
+						name="phoneField"
+						type="text"
+						class="textfield"
+						value="eg: 212-KJ5-8383"
+						placeholder="eg: 212-KJ5-8383"
+						onblur="resetPhoneField();"
+						onfocus="clearPhoneExample();"
+					/>
+
+					<label for="emailField">Email:</label>
+					<input
+						id="emailField"
+						name="emailField"
+						type="text"
+						class="textfield"
+						value="example@example.com"
+						placeholder="example@example.com"
+						onblur="resetEmailField();"
+						onfocus="clearEmailExample();"
+					/>
+
+					<input id="submit" type="submit" name="submit" value="Sign Me Up!"/>
+
+			</fieldset>
+		</form>
+	</div>
+</main>
+<footer>
+	<div class="contentWrapper">Copyright The Fronion - All Rights Reserved</div>
+</footer>
+</body>
+</html>
